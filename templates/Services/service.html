@@ -1,0 +1,32 @@
+{% extends "Services/base.html" %} {% block content %}
+<style>
+  .book-now {
+    position: relative;
+    top: 158px;
+    left: 60px;
+    cursor: pointer;
+  }
+
+  .book-now:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="main">
+  {% for i in sub_services %}
+  <div class="content">
+    <a href="#" style="text-decoration: none">
+      <div
+        class="div-container"
+        style="background-image: url({{i.image.url}});"
+      >
+        <div class="title-div">
+          <p class="title">{{i.title_en}}</p>
+        </div>
+        <a class="book-now" style="color: #5920bc">Book now</a>
+      </div>
+    </a>
+  </div>
+  {%endfor%}
+</div>
+
+{% endblock %}

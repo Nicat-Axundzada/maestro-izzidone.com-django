@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IZZI DONE</title>
+    <link rel="stylesheet" href="{% static 'Services/css/style.css' %}" />
+  </head>
+  <body>
+    {% include "Services/header.html" %}
+    {% block content %} {% endblock %}
+    {% include "Services/footer.html" %}
+  </body>
+</html>

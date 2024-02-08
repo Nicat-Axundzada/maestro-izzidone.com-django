@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Service and SubService</title>
+</head>
+<body>
+
+<h2>Create Service and SubService</h2>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ service_form.as_p }}
+  {{ sub_service_formset.as_table }}
+  <input type="submit" value="Save">
+</form>
+
+</body>
+</html>

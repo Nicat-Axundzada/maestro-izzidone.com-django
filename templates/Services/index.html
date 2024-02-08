@@ -1,0 +1,12 @@
+{% extends 'Services/base.html' %}
+{% load static%}
+
+{% block content %}
+
+<div class="main"></div>
+
+<script>
+    let services = {{ data_from_database|safe }};
+</script>
+<script src="{% static 'Services/scripts/script.js' %}"></script>
+{% endblock %}

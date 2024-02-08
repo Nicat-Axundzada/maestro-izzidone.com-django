@@ -1,0 +1,139 @@
+{% load static %}
+<div class="nav">
+    <div class="links">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="70"
+        height="73"
+        viewBox="0 0 70 73"
+        fill="none"
+        class="izzi"
+      >
+        <path
+          d="M0.908194 38H9.40248V12.6432H0.908194V38ZM0 4.83894C0 7.581 2.35062 9.73164 5.12862 9.73164C7.96005 9.73164 10.2038 7.581 10.2038 4.83894C10.2038 2.09687 7.96005 0 5.12862 0C2.35062 0 0 2.09687 0 4.83894Z"
+          fill="#5920BC"
+        />
+        <path
+          d="M14.3 19.8921H22.5L14.3 31.5688V37.6982H33V30.5556H24.5L33 18.7855V12.6432H14.3V19.8921Z"
+          fill="#5920BC"
+        />
+        <path
+          d="M60.7031 38H69.1985V12.6432H60.7031V38ZM59.7948 4.83894C59.7948 7.581 62.1458 9.73164 64.9241 9.73164C67.7559 9.73164 70 7.581 70 4.83894C70 2.09687 67.7559 0 64.9241 0C62.1458 0 59.7948 2.09687 59.7948 4.83894Z"
+          fill="#5920BC"
+        />
+        <path
+          d="M37 19.8921H45.2011L37 31.5688V37.6981H55.7025V30.5556H47.2014L55.7025 18.7855V12.6432H37V19.8921Z"
+          fill="#5920BC"
+        />
+        <path
+          d="M58.3718 51.3636C51.7514 56.1958 43.7599 58.7855 35.5637 58.7548C27.3675 58.724 19.3956 56.0744 12.8117 51.1927L18.0217 44.166C23.1075 47.9369 29.2653 49.9836 35.5965 50.0074C41.9277 50.0311 48.1007 48.0307 53.2146 44.2981L58.3718 51.3636Z"
+          fill="#5920BC"
+        />
+      </svg>
+      <a href="" id="orders-link">My orders</a>
+      <a href="" id="help-link">Help</a>
+      <a href="" id="services-link">Services</a>
+    </div>
+    {% if user.is_authenticated %}
+    <p>{{ user.email }}</p>
+    <a href="{% url 'account:logout'%}">Logout</a> 
+
+    {% else %}
+    <div class="account">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        id="search-icon"
+      >
+        <path
+          d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+          stroke="#222222"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18.9999 18.9999L14.6499 14.6499"
+          stroke="#222222"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <a href="{% url 'Services:create_service' %}">Create Service</a>
+      <a href="{% url 'account:login'%}">Log in</a> 
+      <a a href="{% url 'account:signup' %}">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+          >
+            <path
+              d="M11.6667 7.29993H2.33333C1.59695 7.29993 1 7.92673 1 8.69993V13.5999C1 14.3731 1.59695 14.9999 2.33333 14.9999H11.6667C12.403 14.9999 13 14.3731 13 13.5999V8.69993C13 7.92673 12.403 7.29993 11.6667 7.29993Z"
+              stroke="white"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M3.66669 7.3V4.5C3.66669 3.57174 4.01788 2.6815 4.643 2.02513C5.26812 1.36875 6.11597 1 7.00002 1C7.88408 1 8.73192 1.36875 9.35704 2.02513C9.98216 2.6815 10.3334 3.57174 10.3334 4.5V7.3"
+              stroke="white"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>Sign up</span>
+        </button>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  
+  <div class="nav-mobile">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="12"
+      viewBox="0 0 32 12"
+      fill="none"
+    >
+      <rect width="32" height="3" rx="1.5" fill="#222222" />
+      <rect y="9" width="23" height="3" rx="1.5" fill="#222222" />
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="51"
+      height="29"
+      viewBox="0 0 51 29"
+      fill="none"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M6.43259 6.49635C5.71195 7.22015 4.82001 7.58204 3.75678 7.58204C2.69354 7.58204 1.8016 7.22015 1.08096 6.49635C0.36032 5.77256 0 4.87671 0 3.80882C0 3.28674 0.100417 2.79432 0.301251 2.33157C0.502085 1.86881 0.773801 1.46539 1.1164 1.12129C1.459 0.777189 1.86067 0.504283 2.3214 0.30257C2.78214 0.100857 3.2606 0 3.75678 0C4.27658 0 4.76685 0.100857 5.22759 0.30257C5.68833 0.504283 6.08409 0.777189 6.41487 1.12129C6.74566 1.46539 7.01147 1.86881 7.2123 2.33157C7.41313 2.79432 7.51355 3.28674 7.51355 3.80882C7.51355 4.87671 7.15323 5.77256 6.43259 6.49635ZM6.98193 9.50425V28.05H0.531616V9.50425H6.98193ZM24.3127 28.05V22.8173H17.9687L24.1355 13.7758V9.50425H10.5969V14.7369H16.6928L10.4552 23.7784V28.05H24.3127ZM40.5803 22.8173V28.05H26.7227V23.7784L32.9604 14.7369H26.8645V9.50425H40.403V13.7758L34.2363 22.8173H40.5803ZM47.2432 7.58204C48.3065 7.58204 49.1984 7.22015 49.919 6.49635C50.6397 5.77256 51 4.87671 51 3.80882C51 3.28674 50.8996 2.79432 50.6987 2.33157C50.4979 1.86881 50.2321 1.46539 49.9013 1.12129C49.5705 0.777189 49.1748 0.504283 48.714 0.30257C48.2533 0.100857 47.763 0 47.2432 0C46.747 0 46.2686 0.100857 45.8079 0.30257C45.3471 0.504283 44.9454 0.777189 44.6029 1.12129C44.2603 1.46539 43.9885 1.86881 43.7877 2.33157C43.5869 2.79432 43.4865 3.28674 43.4865 3.80882C43.4865 4.87671 43.8468 5.77256 44.5674 6.49635C45.288 7.22015 46.18 7.58204 47.2432 7.58204ZM50.4684 9.50425V28.05H44.0181V9.50425H50.4684Z"
+        fill="#5920BC"
+      />
+    </svg>
+    <div class="image" style="background-image: url('{% static 'Services/assets/Oval.svg' %}')"></div>
+  </div>
+  
+  <div class="header" style="background-image: url('{% static 'Services/assets/head-bg.svg' %}')">
+    <p>Find your best</p>
+  </div>
+  
+  <div class="header-mobile">
+    <div class="div">
+      <img src="{% static 'Services/assets/image 1044.svg' %}" alt="" />
+      <p>All Services</p>
+    </div>
+    <span>Find your best</span>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      When an unknown printer.
+    </p>
+  </div>
